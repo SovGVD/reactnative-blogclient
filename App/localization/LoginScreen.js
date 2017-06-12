@@ -5,14 +5,15 @@ export let l18n = new LocalizedStrings({
     login: "Sign in",
     welcome: "Welcome",
     plogin: "Login",
-    ppassword: "Password"
+    ppassword: "Password",
+    autherror: "Unable to login"
   },
   ru: {
     login:"Войти",
     welcome: "Добро пожаловать",
     plogin: "Логин",
-    ppassword: "Пароль"
-
+    ppassword: "Пароль",
+    autherror: "Невозможно войти"
   }
 });
 

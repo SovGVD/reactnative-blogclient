@@ -13,10 +13,6 @@ import { StackNavigator, NavigationActions } from 'react-navigation';
 import l18n from '../../localization/MainScreen.js';
 
 
-
-
-
-
 class MainScreen extends React.Component {
   static navigationOptions = {
     title: l18n.domains,
@@ -51,6 +47,7 @@ class MainScreen extends React.Component {
 	  
   }
   doListError = function (r) {
+	  // TODO better error handler
 	  ToastAndroid.show("ERROR:"+r, ToastAndroid.SHORT);
   }
  

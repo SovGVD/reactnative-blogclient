@@ -11,7 +11,6 @@ import { StackNavigator, NavigationActions } from 'react-navigation';
 import l18n from '../../localization/LoginScreen.js';
 
 
-
 class LoginScreen extends React.Component {
   static navigationOptions = {
     title: l18n.welcome,
@@ -27,20 +26,19 @@ class LoginScreen extends React.Component {
 	  restapi.doLogin(this.formState.login.text, this.formState.password.text, function(r) { this.doAuthSuccess(r); }.bind(this), function(r) { this.doAuthError(r); }.bind(this));
   }
   doAuthSuccess = function (r) {
-	  		const resetAction = NavigationActions.reset({
-			index: 0,
-			actions: [
-				NavigationActions.navigate({ routeName: 'Main'})
-			]
-			})
-			this.props.navigation.dispatch(resetAction);
-
-	  
+		const resetAction = NavigationActions.reset({
+		index: 0,
+		actions: [
+			NavigationActions.navigate({ routeName: 'Main'})
+		]
+		})
+		this.props.navigation.dispatch(resetAction);
   }
   doAuthError = function (r) {
-	  ToastAndroid.show("ERROR:"+r, ToastAndroid.SHORT);
+	  // TODO better error handler
+	  ToastAndroid.show(l18n.autherror, ToastAndroid.SHORT);
   }
-
+  
   render() {
 	const { navigate } = this.props.navigation;
     return (

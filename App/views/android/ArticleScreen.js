@@ -14,8 +14,6 @@ import {
 import { StackNavigator, NavigationActions } from 'react-navigation';
 
 
-
-
 class ArticleScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: `${navigation.state.params.title}`,
@@ -43,6 +41,7 @@ class ArticleScreen extends React.Component {
 	  this.setState({ article: r });
   }
   doDataError = function (r) {
+	  // TODO better error handler
 	  ToastAndroid.show("ERROR:"+r, ToastAndroid.SHORT);
   }
  

@@ -3,7 +3,7 @@
 var global_ajax = require("../libs/ajax.js");
 
 var restapi = function () {
-	var api_host="https://nz.sovgvd.info/admin_api.php";	// MUST BE hardcoded
+	var api_host="https://nz.sovgvd.info/admin_api.php";	// MUST BE hardcoded in REST API library
 	var credentials = false;
 	var domain = false;
 	var post_id = false;
@@ -97,7 +97,6 @@ var restapi = function () {
 	}
 	
 	this.api = function (url,method,args,cookies,async,_callback) {
-		//console.warn("doAPI");
 		global_ajax.send(url,method,args,cookies,async,_callback);
 	}
 }

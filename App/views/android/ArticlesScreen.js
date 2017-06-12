@@ -12,6 +12,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { StackNavigator, NavigationActions } from 'react-navigation';
+import l18n from '../../localization/ArticlesScreen.js';
 
 
 class ArticlesScreen extends React.Component {
@@ -24,7 +25,7 @@ class ArticlesScreen extends React.Component {
     super();
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['Loading...']),
+      dataSource: ds.cloneWithRows([l18n.loading+'...']),
     };
   }
 
@@ -49,6 +50,7 @@ class ArticlesScreen extends React.Component {
 	  
   }
   doListError = function (r) {
+	  // TODO better error handler
 	  ToastAndroid.show("ERROR:"+r, ToastAndroid.SHORT);
   }
  
